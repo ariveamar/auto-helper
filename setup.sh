@@ -1,12 +1,10 @@
 #!/bin/bash
 
 dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
-yum -y install bind bind-utils git ansible vim wget curl bash-completion tree tar libselinux-python3  dhcp-server tftp-server syslinux httpd haproxy
+yum -y install bind bind-utils ansible vim wget curl bash-completion tree tar libselinux-python3  dhcp-server tftp-server syslinux httpd haproxy
 mv /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.bak
 systemctl disable firewalld --now
 setenforce 0
-git clone https://github.com/ariveamar/auto-helper.git
-cd auto-helper
 echo "Please confirm set main variable first done ?"
 read inputs
 echo $inputs
