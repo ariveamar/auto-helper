@@ -53,21 +53,5 @@ api-int		IN	A	{{ helper.ipaddr }}
 {% endfor %}
 {% endif %}
 ;
-; The ETCd cluster lives on the masters...so point these to the IP of the masters
-{% for m in masters %}
-etcd-{{ loop.index0 }}	IN	A	{{ m.ipaddr }}
-{% endfor %}
-;
-{% if other is defined %}
-; Create entries for the other hosts
-{% for o in other %}
-{{ o.name }}		IN	A	{{ o.ipaddr }}
-{% endfor %}
-;
-{% endif %}
-; The SRV records are IMPORTANT....make sure you get these right...note the trailing dot at the end...
-{% for m in masters %}
-_etcd-server-ssl._tcp	IN	SRV	0 10 2380 etcd-{{ loop.index0 }}.{{ dns.clusterid }}.{{ dns.domain | lower }}.
-{% endfor %}
 ;
 ;EOF
