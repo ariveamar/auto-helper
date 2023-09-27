@@ -23,8 +23,8 @@ mkdir -p  /var/lib/tftpboot/pxelinux.cfg
 cp -rvf /usr/share/syslinux/* /var/lib/tftpboot
 mkdir -p /var/lib/tftpboot/rhcos
 mkdir -p /var/www/html/rhcos/
-chmod 775 /var/www/html/rhcos
-wget -O https://rhcos.mirror.openshift.com/art/storage/prod/streams/4.12/builds/412.86.202308081039-0/x86_64/rhcos-412.86.202308081039-0-live-kernel-x86_64 /var/lib/tftpboot/rhcos/kernel
+chmod 775 /var/www/html/rhcos 
+wget -O /var/lib/tftpboot/rhcos/initramfs.img https://rhcos.mirror.openshift.com/art/storage/prod/streams/4.12/builds/412.86.202308081039-0/x86_64/rhcos-412.86.202308081039-0-live-initramfs.x86_64.img
 wget -O  /var/lib/tftpboot/rhcos/kernel https://rhcos.mirror.openshift.com/art/storage/prod/streams/4.12/builds/412.86.202308081039-0/x86_64/rhcos-412.86.202308081039-0-live-kernel-x86_64
 wget -O /var/www/html/rhcos/rootfs.img https://rhcos.mirror.openshift.com/art/storage/prod/streams/4.12/builds/412.86.202308081039-0/x86_64/rhcos-412.86.202308081039-0-live-rootfs.x86_64.img
 wget -O /root/openshift-install-linux.tar.gz https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.12.35/openshift-install-linux.tar.gz
