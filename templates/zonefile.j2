@@ -6,7 +6,7 @@ $TTL 1W
 			2W		; expiry (2 weeks)
 			1W )		; minimum (1 week)
 	IN	NS	ns1.{{ dns.clusterid }}.{{ dns.domain | lower }}.
-	IN	MX 10	smtp.{{ dns.clusterid }}.{{ dns.domain | lower }}.
+	
 ;
 ; 
 ns1	IN	A	{{ helper.ipaddr }}
