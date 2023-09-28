@@ -102,8 +102,8 @@ frontend ingress-http
 
 backend ingress-http
     balance source
-{% if workers is defined %}
-{% for w in workers %}
+{% if router is defined %}
+{% for w in router %}
     server {{ w.name | lower }}-http-router{{ loop.index0 }} {{ w.ipaddr }}:80 check
 {% endfor %}
 {% else %}
@@ -119,8 +119,8 @@ frontend ingress-https
 
 backend ingress-https
     balance source
-{% if workers is defined %}
-{% for w in workers %}
+{% if router is defined %}
+{% for w in router %}
     server {{ w.name | lower }}-https-router{{ loop.index0 }} {{ w.ipaddr }}:443 check
 {% endfor %}
 {% else %}
