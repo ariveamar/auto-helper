@@ -27,8 +27,8 @@ wget -O  /var/lib/tftpboot/rhcos/kernel https://rhcos.mirror.openshift.com/art/s
 wget -O /var/www/html/rhcos/rootfs.img https://rhcos.mirror.openshift.com/art/storage/prod/streams/4.12/builds/412.86.202308081039-0/x86_64/rhcos-412.86.202308081039-0-live-rootfs.x86_64.img
 wget -O /root/openshift-install-linux.tar.gz https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.12.35/openshift-install-linux.tar.gz
 wget -O /root/openshift-client-linux.tar.gz https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.12.35/openshift-client-linux.tar.gz
-tar -xvf /root/openshift-install-linux.tar.gz
-tar -xvf /root/openshift-client-linux.tar.gz
+tar -xvf /root/openshift-install-linux.tar.gz -C /root/
+tar -xvf /root/openshift-client-linux.tar.gz -C /root/
 chmod -R 775 /var/www/html/rhcos 
 chmod -R 775 /var/lib/tftpboot/rhcos
 sed -i 's\80\8080\g' /etc/httpd/conf/httpd.conf
