@@ -40,8 +40,8 @@ read inputs
 echo $inputs
 mkdir /ocp-prod
 cp install-config.yaml /ocp-prod/
-sh /root/openshift-install create manifests --dir  /ocp-prod
+/root/openshift-install create manifests --dir  /ocp-prod
 sed -i 's\true\false\g' /ocp-prod/manifests/cluster-scheduler-02-config.yml
-sh /root/openshift-install create ignition-configs --dir /ocp-prod
+/root/openshift-install create ignition-configs --dir /ocp-prod
 cp /ocp-prod/*.ign /var/www/html/ignition
 chmod 777 /var/www/html/ignition/*ign
