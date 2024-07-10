@@ -23,11 +23,11 @@ masters:
   - name: "master03"
     ipaddr: "192.168.100.13"
 router:
-  - name: "infra-router-01"
+  - name: "router-01"
     ipaddr: "10.31.49.7"
-  - name: "infra-router-02"
+  - name: "router-02"
     ipaddr: "10.31.49.8"
-  - name: "infra-router-03"
+  - name: "router-03"
     ipaddr: "10.31.49.9"
 workers:
   - name: "worker01"                       #hostname (WITHOUT the fqdn) of the worker node you want to set
