@@ -24,11 +24,11 @@ masters:
     ipaddr: "192.168.100.13"
 router:
   - name: "router-01"
-    ipaddr: "10.31.49.7"
+    ipaddr: "192.168.100.7"
   - name: "router-02"
-    ipaddr: "10.31.49.8"
+    ipaddr: "192.168.100.8"
   - name: "router-03"
-    ipaddr: "10.31.49.9"
+    ipaddr: "192.168.100.9"
 workers:
   - name: "worker01"                       #hostname (WITHOUT the fqdn) of the worker node you want to set
     ipaddr: "192.168.100.21"               #The IP address that you want set (1st node)
